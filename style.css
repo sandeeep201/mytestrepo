@@ -1,9 +1,6 @@
-/* Apply blur to the entire background */
+/* Apply a blue background to the entire page */
 body {
-    background-image: url('your-background-image.jpg'); /* Replace with your image URL */
-    background-size: cover;
-    background-position: center;
-    filter: blur(10px); /* Adjust blur level as needed */
+    background-color: #0000FF; /* Pure blue */
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -13,18 +10,30 @@ body {
     align-items: center;
 }
 
-/* Title bar styling */
-.title-bar {
+/* Title styling */
+.title {
     position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: white;
-    font-size: 24px;
+    top: 50%;
+    left: -100%; /* Start outside the left edge */
+    transform: translateY(-50%);
+    font-size: 36px;
     font-family: Arial, sans-serif;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: white;
+    white-space: nowrap;
+    animation: slide-in 5s infinite; /* Animation to slide in */
 }
+
+/* Keyframes for the sliding effect */
+@keyframes slide-in {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 50%; /* Centered */
+        transform: translateX(-50%);
+    }
+    100% {
+        left: 120%; /* Slide out to the right */
+    }
+}
+
